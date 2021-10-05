@@ -308,7 +308,7 @@ export default {
   },
   methods: {
     validate() {
-      const promise = new Promise((resolve, reject) => {
+      const promise = new Promise((resolve) => {
         this.$validator.validateAll().then((result) => {
           if (!result) {
             return resolve(result);

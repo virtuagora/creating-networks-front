@@ -124,6 +124,7 @@ export default {
   methods: {
     extractVideoId() {
       this.noVideoId = false;
+      // eslint-disable-next-line no-useless-escape
       const regex = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/;
       const r = this.urlInput.match(regex);
       this.model.public_data.youtube = r[1];
@@ -134,7 +135,7 @@ export default {
       }
     },
     validate() {
-      const promise = new Promise((resolve, reject) => {
+      const promise = new Promise((resolve) => {
         this.$validator.validateAll().then((result) => {
           if (!result) {
             return resolve(result);

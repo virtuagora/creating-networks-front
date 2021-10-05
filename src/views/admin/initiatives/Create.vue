@@ -105,7 +105,7 @@ export default {
         this.startLoading();
         this.$http
           .post('/v1/initiatives', this.getPayload())
-          .then((res) => {
+          .then(() => {
             this.$toast.open({
               message: '<i class="fas fa-check"></i>&nbsp;New initiative has been created',
               type: 'is-success',

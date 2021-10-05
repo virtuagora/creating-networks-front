@@ -61,7 +61,7 @@ export default {
         this.startLoading();
         this.$http
           .post('/v1/videos', this.getPayload())
-          .then((res) => {
+          .then(() => {
             this.$toast.open({
               message: '<i class="fas fa-check"></i>&nbsp;New video has been added to Creating Networks TV!',
               type: 'is-success',

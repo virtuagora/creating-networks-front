@@ -50,13 +50,13 @@
 
 <script>
 import { differenceBy } from 'lodash';
-import PaginationBar from '@/components/utils/PaginationBar';
-import EmptyTable from '@/components/utils/EmptyTable';
+// import PaginationBar from '@/components/utils/PaginationBar';
+// import EmptyTable from '@/components/utils/EmptyTable';
 
 export default {
   components: {
-    PaginationBar,
-    EmptyTable,
+    // PaginationBar,
+    // EmptyTable,
   },
   data() {
     return {
@@ -71,7 +71,7 @@ export default {
   },
   methods: {
     sync(data) {
-      if (!data.person.terms) currentAreas = [];
+      if (!data.person.terms) this.currentAreas = [];
       this.currentAreas = data.person.terms;
     },
     fetchUser() {
@@ -121,7 +121,7 @@ export default {
           `/v1/users/${this.user.id}/terms`,
           this.getPayload(),
         )
-        .then((res) => {
+        .then(() => {
           this.selectedAreas.forEach((area) => {
             this.currentAreas.push(area);
           });
@@ -149,7 +149,7 @@ export default {
         .delete(
           `/v1/users/${this.user.id}/terms/${id}`,
         )
-        .then((res) => {
+        .then(() => {
           this.currentAreas = this.currentAreas.filter(area => area.id != id);
           this.$toast.open({
             message: '<i class="fas fa-check"></i>&nbsp;Area of interest has been removed from your profile',

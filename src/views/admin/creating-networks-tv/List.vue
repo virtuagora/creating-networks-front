@@ -69,7 +69,7 @@ export default {
     deleteVideo(resource) {
       this.startLoading();
       this.$http.delete(`/v1/videos/${resource.id}`)
-        .then((res) => {
+        .then(() => {
           this.$toast.open({
             message: '<i class="fas fa-check"></i>&nbsp;The initiative has been deleted',
             type: 'is-success',

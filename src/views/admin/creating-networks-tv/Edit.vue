@@ -14,7 +14,7 @@
 
 <script>
 import merge from 'lodash/merge';
-import omit from 'lodash/omit';
+// import omit from 'lodash/omit';
 import VideoForm from '@/components/utils/videos/VideoForm.vue';
 
 export default {
@@ -81,7 +81,7 @@ export default {
         this.startLoading();
         this.$http
           .patch(`/v1/videos/${this.id}`, this.getPayload())
-          .then((res) => {
+          .then(() => {
             this.$toast.open({
               message: '<i class="fas fa-check"></i>&nbsp;Your video has been edited',
               type: 'is-success',

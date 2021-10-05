@@ -89,6 +89,7 @@ export default {
       this.links = links;
     },
     fetchNext() {
+      // eslint-disable-next-line no-useless-escape
       const url = this.links.next.replace(/^.*\/\/[^\/]+/, '');
       this.startLoading();
       this.$emit('update:fetching', true);
@@ -103,6 +104,7 @@ export default {
         });
     },
     fetchPrevious() {
+      // eslint-disable-next-line no-useless-escape
       const url = this.links.prev.replace(/^.*\/\/[^\/]+/, '');
       this.startLoading();
       this.$emit('update:fetching', true);

@@ -121,7 +121,7 @@ export default {
       this.startLoading();
       this.$http
         .delete(`/v1/initiatives/${this.id}/members/${id}`)
-        .then(res => {
+        .then(() => {
           this.userFound = null;
           this.$toast.open({
             message:
@@ -151,7 +151,7 @@ export default {
             }
           }
         )
-        .then(res => {
+        .then(() => {
           this.$toast.open({
             message:
               '<i class="fas fa-check"></i>&nbsp;User has been updated',

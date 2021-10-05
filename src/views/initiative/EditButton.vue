@@ -39,7 +39,7 @@ export default {
           if(this.owners.includes(this.user.id)) {
             this.showUserEdit = true
           }
-        }).catch( err => {
+        }).catch(() => {
           return
         })
         .finally( () => {

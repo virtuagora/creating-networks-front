@@ -148,6 +148,8 @@ export default {
         return [[0, 1], [768, 2]];
       } if (this.initiatives.length == 1) {
         return null;
+      } else {
+        return null
       }
     },
   },

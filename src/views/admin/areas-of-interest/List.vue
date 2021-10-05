@@ -33,7 +33,6 @@ import EmptyTable from '@/components/utils/EmptyTable';
 
 export default {
   components: {
-    ConfirmDelete,
     PaginationBar,
     EmptyTable,
   },
@@ -70,7 +69,7 @@ export default {
     deleteAreaOfInterest(resource) {
       this.startLoading();
       this.$http.delete(`/v1/terms/${resource.id}`)
-        .then((res) => {
+        .then(() => {
           this.$toast.open({
             message: '<i class="fas fa-check"></i>&nbsp;The area of interest has been deleted',
             type: 'is-success',

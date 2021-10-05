@@ -277,7 +277,7 @@ export default {
           'content-type': this.fileAvatar.type
         }
       })
-      .then(res => {
+      .then(() => {
         this.$toast.open({
             message:
               '<i class="fas fa-check"></i>&nbsp;Picture was successfully loaded!',
@@ -299,7 +299,7 @@ export default {
     removeAvatar(){
       this.startLoading()
       this.$http.delete(`/v1/subjects/${this.user.id}/picture`)
-        .then(res => {
+        .then(() => {
           this.updateUserToken()
           this.fileAvatar = null
           this.$toast.open({
@@ -341,7 +341,7 @@ export default {
         this.startLoading();
         this.$http
           .patch(`/v1/users/${this.user.id}`, this.getPayload())
-          .then((res) => {
+          .then(() => {
             this.response.ok = true;
           })
           .catch((err) => {

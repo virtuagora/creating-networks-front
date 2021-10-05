@@ -116,7 +116,7 @@ export default {
         this.startLoading();
         this.$http
           .put(`/v1/users/${this.user.id}/password`, this.getPayload())
-          .then((res) => {
+          .then(() => {
             this.response.ok = true;
           })
           .catch((err) => {

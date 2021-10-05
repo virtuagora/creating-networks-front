@@ -112,7 +112,7 @@ export default {
     submit() {
       this.startLoading();
       this.$http.post(`/v1/subjects/${this.userFound.id}/roles/Admin`, this.getPayload())
-        .then((res) => {
+        .then(() => {
           this.userFound = null;
           this.$toast.open({
             message: '<i class="fas fa-check"></i>&nbsp;New administrator added',

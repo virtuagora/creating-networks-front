@@ -301,7 +301,7 @@ export default {
     },
   },
   watch: {
-    inputSearchName(newVal, oldVal) {
+    inputSearchName() {
       this.fetchInitiatives();
     },
   },

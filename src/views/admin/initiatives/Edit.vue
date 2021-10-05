@@ -26,7 +26,7 @@
 
 <script>
 import merge from 'lodash/merge';
-import omit from 'lodash/omit';
+// import omit from 'lodash/omit';
 import DataForm from '@/components/utils/initiatives/DataForm.vue';
 import CustomizeForm from '@/components/utils/initiatives/CustomizeForm.vue';
 import LocationForm from '@/components/utils/initiatives/LocationForm.vue';
@@ -175,7 +175,7 @@ export default {
         const payload = this.diffObject(this.originalDataPayload, dataPayloadModified);
         this.$http
           .patch(`/v1/initiatives/${this.id}`, this.makePayload(payload))
-          .then((res) => {
+          .then(() => {
             this.$toast.open({
               message: '<i class="fas fa-check"></i>&nbsp;Initiative has been updated',
               type: 'is-success',
@@ -199,7 +199,7 @@ export default {
       const payload = this.diffObject(this.originalLocationPayload, locationPayloadModified);
       if (payload.registered_city_id == null) {
         this.$http.delete(`/v1/initiatives/${this.id}/city`)
-          .then((res) => {
+          .then(() => {
             this.$toast.open({
               message: '<i class="fas fa-check"></i>&nbsp;Initiative has been updated',
               type: 'is-success',
@@ -217,7 +217,7 @@ export default {
       if (payload.registered_city_id) {
         this.$http
           .post(`/v1/initiatives/${this.id}/city`, this.makePayload(payload))
-          .then((res) => {
+          .then(() => {
             this.$toast.open({
               message: '<i class="fas fa-check"></i>&nbsp;Initiative has been updated',
               type: 'is-success',

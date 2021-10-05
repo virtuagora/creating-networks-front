@@ -77,7 +77,7 @@ export default {
         // is valid, then...
         this.startLoading();
         this.$http.post('/v1/pending-users', this.getPayload())
-          .then((res) => {
+          .then(() => {
             this.response.ok = true;
           }).catch((err) => {
             console.error(err);

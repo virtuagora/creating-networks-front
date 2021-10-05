@@ -68,14 +68,14 @@
 </template>
 
 <script>
-import PaginationBar from "@/components/utils/PaginationBar";
-import EmptyTable from "@/components/utils/EmptyTable";
+// import PaginationBar from "@/components/utils/PaginationBar";
+// import EmptyTable from "@/components/utils/EmptyTable";
 
 export default {
   props: ["model", "id"],
   components: {
-    PaginationBar,
-    EmptyTable
+    // PaginationBar,
+    // EmptyTable
   },
   data() {
     return {
@@ -158,7 +158,7 @@ export default {
       this.startLoading();
       this.$http
         .post(`/v1/initiatives/${this.id}/countries`, this.getPayload())
-        .then(res => {
+        .then(() => {
           this.$emit("updateModel");
           this.queryRegion = "";
           this.queryCountry = "";
@@ -186,7 +186,7 @@ export default {
       this.startLoading();
       this.$http
         .delete(`/v1/initiatives/${this.id}/countries/${id}`)
-        .then(res => {
+        .then(() => {
           this.$emit("updateModel");
           this.$toast.open({
             message:

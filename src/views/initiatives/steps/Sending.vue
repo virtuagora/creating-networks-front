@@ -75,7 +75,7 @@ export default {
       this.isLoading = true;
       this.$http
         .post('/v1/initiatives', this.getPayload())
-        .then((res) => {
+        .then(() => {
           this.$emit('forward');
         })
         .catch((err) => {

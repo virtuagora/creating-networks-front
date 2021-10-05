@@ -69,7 +69,7 @@ export default {
     deleteInitiative(resource) {
       this.startLoading();
       this.$http.delete(`/v1/initiatives/${resource.id}`)
-        .then((res) => {
+        .then(() => {
           this.$toast.open({
             message: '<i class="fas fa-check"></i>&nbsp;The initiative has been deleted',
             type: 'is-success',

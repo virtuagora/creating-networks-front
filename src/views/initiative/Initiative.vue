@@ -93,7 +93,7 @@ export default {
       }
       this.startLoading()
       this.$http.post(`/v1/initiatives/${this.initiative.id}/members/${this.user.id}`)
-      .then( res => {
+      .then(() => {
         this.$toast.open({
             message:
               '<i class="fas fa-check"></i>&nbsp;You are now following this initiative!',
@@ -120,7 +120,7 @@ export default {
       }
       this.startLoading()
       this.$http.delete(`/v1/initiatives/${this.initiative.id}/members/${this.user.id}`)
-      .then( res => {
+      .then(() => {
         this.$toast.open({
             message:
               '<i class="fas fa-check"></i>&nbsp;You don\'t follow the initiative anymore',

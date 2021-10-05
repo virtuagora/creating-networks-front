@@ -25,13 +25,12 @@
 
 <script>
 import {
-  MglMap, MglNavigationControl, MglMarker, MglPopup,
+  MglMap, MglMarker, MglPopup,
 } from 'vue-mapbox';
 
 export default {
   components: {
     MglMap,
-    MglNavigationControl,
     MglMarker,
     MglPopup,
   },
@@ -48,7 +47,7 @@ export default {
     };
   },
   methods: {
-    onMapLoaded(event) {
+    onMapLoaded() {
       console.info('Map has loaded');
       // in component
       // this.map = event.map;

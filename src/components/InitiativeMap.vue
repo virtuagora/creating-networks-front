@@ -41,8 +41,7 @@ import {
   MglMap,
   MglNavigationControl,
   MglMarker,
-  MglPopup,
-  MglGeojsonLayer
+  MglPopup
 } from "vue-mapbox";
 import CityPopUp from "./CityPopUp";
 import CountryPopUp from "./CountryPopUp";
@@ -53,8 +52,7 @@ export default {
     MglNavigationControl,
     MglMarker,
     MglPopup,
-    CityPopUp,
-    MglGeojsonLayer
+    CityPopUp
   },
   props: {
     cities: {
@@ -73,7 +71,7 @@ export default {
     };
   },
   methods: {
-    async onMapLoad(event) {
+    async onMapLoad() {
       // Here we cathing 'load' map event
       this.$emit("mapReady");
     },
@@ -150,13 +148,13 @@ export default {
         }
         // "filter": ["==", "$type", "Polygon"]
       });
-      await this.$refs.theMap.map.on("mouseenter", "countries-layer", e => {
+      await this.$refs.theMap.map.on("mouseenter", "countries-layer", () => {
         this.$refs.theMap.map.getCanvas().style.cursor = "pointer";
       });
-      await this.$refs.theMap.map.on("mouseleave", "countries-layer", e => {
+      await this.$refs.theMap.map.on("mouseleave", "countries-layer", () => {
         this.$refs.theMap.map.getCanvas().style.cursor = "";
       });
-      await this.$refs.theMap.map.on("click", "countries-layer", e => {
+      await this.$refs.theMap.map.on("click", "countries-layer", (e) => {
         this.openCountryModalLayer(e.features[0].properties);
       });
       this.toggleShowCities();

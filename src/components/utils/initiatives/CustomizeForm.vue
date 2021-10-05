@@ -92,9 +92,9 @@
 </template>
 
 <script>
-import PaginationBar from "@/components/utils/PaginationBar";
-import EmptyTable from "@/components/utils/EmptyTable";
-import axios from 'axios'
+// import PaginationBar from "@/components/utils/PaginationBar";
+// import EmptyTable from "@/components/utils/EmptyTable";
+// import axios from 'axios'
 
 export default {
   props: {
@@ -108,8 +108,8 @@ export default {
     }
   },
   components: {
-    PaginationBar,
-    EmptyTable
+    // PaginationBar,
+    // EmptyTable
   },
   data() {
     return {
@@ -145,7 +145,7 @@ export default {
           'content-type': theFile.type
         }
       })
-      .then(res => {
+      .then(() => {
         this.$toast.open({
             message:
               '<i class="fas fa-check"></i>&nbsp;Picture was successfully loaded!',
@@ -179,7 +179,7 @@ export default {
           return
       }
       this.$http.delete(theUrl)
-        .then(res => {
+        .then(() => {
           this.$emit('updateModel')
           this.$toast.open({
             message:

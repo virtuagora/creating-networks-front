@@ -45,14 +45,14 @@
 
 <script>
 import { differenceBy } from 'lodash';
-import PaginationBar from '@/components/utils/PaginationBar';
-import EmptyTable from '@/components/utils/EmptyTable';
+// import PaginationBar from '@/components/utils/PaginationBar';
+// import EmptyTable from '@/components/utils/EmptyTable';
 
 export default {
   props: ['model','id'],
   components: {
-    PaginationBar,
-    EmptyTable,
+    // PaginationBar,
+    // EmptyTable,
   },
   data() {
     return {
@@ -96,7 +96,7 @@ export default {
           `/v1/initiatives/${this.id}/terms`,
           this.getPayload(),
         )
-        .then((res) => {
+        .then(() => {
           this.selectedAreas = [];
           this.$emit('updateModel');
           this.$toast.open({
@@ -121,7 +121,7 @@ export default {
         .delete(
           `/v1/initiatives/${this.id}/terms/${id}`,
         )
-        .then((res) => {
+        .then(() => {
           this.$emit('updateModel')
           this.$toast.open({
             message: '<i class="fas fa-check"></i>&nbsp;Area of interest has been removed from the initiative',
