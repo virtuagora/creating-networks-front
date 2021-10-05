@@ -3,8 +3,8 @@ name: Generate a build and push to build branch ready for runcloud
 
 on:
   push:
-    branches:
-      - master
+    tags:
+      - '*'
 
 jobs:
   build:
